@@ -19,21 +19,20 @@ namespace CodeBase.Hero
     
     public event Action<AnimatorState> StateEntered;
     public event Action<AnimatorState> StateExited;
-   
-    public AnimatorState State { get; private set; }
     
-    public Animator Animator;
+    [SerializeField] private Animator m_Animator;
+    [SerializeField] private CharacterController m_CharacterController;
 
+    public AnimatorState State { get; private set; }
     public bool IsAttacking => State == AnimatorState.Attack;
     
-
-    public void PlayHit() => Animator.SetTrigger(HitHash);
+    public void PlayHit() => m_Animator.SetTrigger(HitHash);
     
-    public void PlayAttack() => Animator.SetTrigger(AttackHash);
+    public void PlayAttack() => m_Animator.SetTrigger(AttackHash);
 
-    public void PlayDeath() =>  Animator.SetTrigger(DieHash);
+    public void PlayDeath() =>  m_Animator.SetTrigger(DieHash);
 
-    public void ResetToIdle() => Animator.Play(_idleStateHash, -1);
+    public void ResetToIdle() => m_Animator.Play(_idleStateHash, -1);
     
     public void EnteredState(int stateHash)
     {
@@ -43,7 +42,12 @@ namespace CodeBase.Hero
 
     public void ExitedState(int stateHash) =>
       StateExited?.Invoke(StateFor(stateHash));
-    
+
+    private void Update()
+    {
+        m_Animator.SetFloat(MoveHash, m_CharacterController.velocity.magnitude, 0.1f, Time.deltaTime);
+    }
+
     private AnimatorState StateFor(int stateHash)
     {
       AnimatorState state;
