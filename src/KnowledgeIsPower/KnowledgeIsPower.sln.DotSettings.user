@@ -1,7 +1,0 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:Boolean x:Key="/Default/CodeEditing/Unity/AllowRiderUpdateNotifications/@EntryValue">False</s:Boolean>
-	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=E24B130F17049745B3FC69117DBB4B4B/AbsolutePath/@EntryValue">/Users/efrimov/Documents/StansAssets.Global.DotSettings</s:String>
-	<s:String x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=E24B130F17049745B3FC69117DBB4B4B/RelativePath/@EntryValue">..\..\..\..\..\..\Documents\StansAssets.Global.DotSettings</s:String>
-	<s:Boolean x:Key="/Default/Environment/InjectedLayers/FileInjectedLayer/=E24B130F17049745B3FC69117DBB4B4B/@KeyIndexDefined">True</s:Boolean>
-	<s:Boolean x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=FileE24B130F17049745B3FC69117DBB4B4B/@KeyIndexDefined">True</s:Boolean>
-	<s:Double x:Key="/Default/Environment/InjectedLayers/InjectedLayerCustomization/=FileE24B130F17049745B3FC69117DBB4B4B/RelativePriority/@EntryValue">1</s:Double></wpf:ResourceDictionary>
