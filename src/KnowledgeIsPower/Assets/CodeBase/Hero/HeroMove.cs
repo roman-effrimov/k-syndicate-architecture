@@ -1,3 +1,4 @@
+using CodeBase.Camera;
 using CodeBase.Infrastructure;
 using CodeBase.Services.Input;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace CodeBase.Hero
         [SerializeField] private float m_MovementSpeed = 8f;
 
         private IInputService m_InputService;
-        private Camera m_Camera;
+        private UnityEngine.Camera m_Camera;
         
         private void Awake()
         {
@@ -19,13 +20,19 @@ namespace CodeBase.Hero
 
         private void Start()
         {
-            m_Camera = Camera.main;
+            InitCamera();
+        }
+
+        private void InitCamera()
+        {
+            m_Camera = UnityEngine.Camera.main;
+            m_Camera.GetComponent<CameraFollow>().SetTarget(transform);
         }
 
         private void Update()
         {
             Vector3 movementVector = m_InputService.MovementAxis;
-            if (movementVector.sqrMagnitude > Constants.Math.Epsilon)
+            if (movementVector.sqrMagnitude > Constants.Math.c_Epsilon)
             {
                 movementVector = m_Camera.transform.TransformDirection(movementVector);
                 movementVector.y = 0f;

@@ -4,14 +4,14 @@ namespace CodeBase
     {
         public static class Math
         {
-            public const float Epsilon = 0.001f;
+            public const float c_Epsilon = 0.001f;
         }
 
         public static class Input
         {
-            public const string HorizontalAxisName = "Horizontal";
-            public const string VerticalAxisName = "Vertical";
-            public const string FireButtonName = "Fire";
+            public const string c_HorizontalAxisName = "Horizontal";
+            public const string c_VerticalAxisName = "Vertical";
+            public const string c_FireButtonName = "Fire";
         }
     }
 }
